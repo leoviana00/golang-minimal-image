@@ -31,6 +31,8 @@ docker build -t leoviana00/codeeducation . -f Dockerfile.scratch
 ```
 docker run leoviana00/codeeducation
 ```
+![](image/go-images.png)
+
 ## Docker login
 
 ```

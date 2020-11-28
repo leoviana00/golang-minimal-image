@@ -26,12 +26,18 @@ Divirta-se
 docker build -t leoviana00/codeeducation . -f Dockerfile.scratch
 ```
 
+## Images
+```
+docker images
+```
+![](image/go-images.png)
+
 ## Run
 
 ```
 docker run leoviana00/codeeducation
 ```
-![](image/go-images.png)
+![](image/go-scratch.png)
 
 ## Docker login
 

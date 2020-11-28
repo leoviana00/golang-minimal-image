@@ -46,3 +46,4 @@ docker pull leoviana00/codeeducation
 ```
 docker pull leoviana00/codeeducation
 ```
+![](image/go-scratch.png)

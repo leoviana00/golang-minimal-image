@@ -97,5 +97,5 @@ docker pull leoviana00/codeeducation
 ## Referências
 - http://goporexemplo.golangbr.org/hello-world.html
 - https://hub.docker.com/_/scratch/
-- https://hub.docker.com/_/scratch/
+- https://hub.docker.com/_/golang/
 - https://imasters.com.br/desenvolvimento/compilacao-estatica-com-golang/

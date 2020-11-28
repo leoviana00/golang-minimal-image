@@ -21,6 +21,7 @@ Divirta-se
 
 ## Utilizando o multi-stage build para compilar a aplicação e otimizar a imagem
 
+## Dockerfile.scratch
 ```
 # satage 1
 # Dockerizando o app

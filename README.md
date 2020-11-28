@@ -1,4 +1,4 @@
-# desafio-go
+# Projeto prtático: Otimização de uma imagem golang
 
 ## 🌱 Descrição do projeto 
 
@@ -19,6 +19,36 @@ Dica: No vídeo de introdução sobre o Docker quando falamos sobre o sistema de
 
 Divirta-se
 
+## Utilizando o multi-stage build para compilar a aplicação e otimizar a imagem
+
+```
+# satage 1
+# Dockerizando o app
+FROM golang:alpine AS builder
+
+# criando um diretório de trabalho
+WORKDIR /src
+
+# Copiando o app
+COPY . .
+
+# Compilação
+# script de construção para compilar estaticamente nosso aplicativo com todas as bibliotecas integradas
+RUN go build -ldflags '-s -w' main.go
+
+# stage 2
+# Add o scratch
+FROM scratch
+
+# diretório de trabalho
+WORKDIR /
+
+# copiando o binário
+COPY --from=builder /src / 
+
+# executando 
+CMD ["./main"]
+```
 
 ## Build 
 

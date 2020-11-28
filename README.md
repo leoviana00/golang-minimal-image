@@ -51,7 +51,7 @@ COPY --from=builder /src /
 CMD ["./main"]
 ```
 
-# Inserindo alguns parâmetros para o linker via -ldflags
+## Inserindo alguns parâmetros para o linker via -ldflags
 
 - Garantindo que o executável seja totalmente livre de dependências. ( -ldflags '-s -w' )
 

@@ -22,23 +22,25 @@ Divirta-se
 ## Utilizando o multi-stage build para compilar a aplicação e otimizar a imagem
 
 ## Dockerfile.scratch
+
+- Stage 1
+
 ```
-# satage 1
-# Dockerizando o app
+# Iniciando uma imagem base golang:alpine
 FROM golang:alpine AS builder
 
-# criando um diretório de trabalho
+# criando diretório de trabalho
 WORKDIR /src
 
 # Copiando o app
 COPY . .
 
-# Compilação
-# script de construção para compilar estaticamente nosso aplicativo com todas as bibliotecas integradas
+# Compilando o binário removendo informações de debug
 RUN go build -ldflags '-s -w' main.go
-
-# stage 2
-# Add o scratch
+```
+- Stage 2
+```
+# Iniciando com scratch
 FROM scratch
 
 # diretório de trabalho
@@ -53,7 +55,7 @@ CMD ["./main"]
 
 ## Inserindo alguns parâmetros para o linker via -ldflags
 
-- Garantindo que o executável seja totalmente livre de dependências. ( -ldflags '-s -w' )
+- Parâmetros para o linker que vão ajudar a diminuir o tamanho do executável final  ( -ldflags '-s -w' )
 
 ```
 O parâmetro -s remove informações de debug do executável e o -w impede a geração do DWARF (Debugging With Attributed Record Formats).

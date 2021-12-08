@@ -88,7 +88,7 @@ docker login
 ## Push
 
 ```
-docker pull leoviana00/codeeducation
+docker push leoviana00/codeeducation
 ```
 ## Pull
 
